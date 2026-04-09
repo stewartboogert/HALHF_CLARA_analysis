@@ -29,7 +29,7 @@ class CLARADataset:
             else:
                 im_file = h5py.File(self.image_dir + im_file_names.decode('utf-8') + '_mask.hdf', 'r')
  
-            ims = [im_file[key][()] for key in im_file.keys()]
+            ims = [im_file[key][()].astype(int) for key in im_file.keys()]
 
             return ims
     

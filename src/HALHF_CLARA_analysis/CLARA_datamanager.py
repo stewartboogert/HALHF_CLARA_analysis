@@ -38,12 +38,6 @@ class CLARA_datamanager :
             # Copy over main data file
             _shutil.copy2(file_path, file_merged_path / file_path.name)
 
-            # is there a data set
-            try :
-                dataset.file['Dataset'].keys()
-            except :
-                continue
-
             # loop over keys in hdf file and move files
             for step_key in dataset.file['Dataset'].keys() :
                 for data_key in dataset.file['Dataset'][step_key].keys() :

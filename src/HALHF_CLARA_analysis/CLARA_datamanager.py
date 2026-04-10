@@ -54,8 +54,10 @@ class CLARA_datamanager :
 
                         for cam_scope_file in cam_scope_files :
                             cam_scope_file_path = _pathlib.Path(cam_scope_file)
-                            _shutil.copy2(cam_scope_file_path, file_merged_path / cam_scope_file_path.name)
-
+                            try :
+                                _shutil.copy2(cam_scope_file_path, file_merged_path / cam_scope_file_path.name)
+                            except PermissionError :
+                                pass
 
 
 

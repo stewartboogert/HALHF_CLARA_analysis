@@ -6,7 +6,7 @@ import numpy as _np
 
 from .CLARA_dataset import CLARADataset
 
-class CLARA_datamanager :
+class CLARADatamanager :
 
     def __init__(self, path):
         self.path = path
